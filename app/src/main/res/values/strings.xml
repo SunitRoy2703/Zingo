@@ -10,5 +10,6 @@
     <string name="login_mobile_number_hint">Mobile Number</string>
     <string name="login_phno_hint">Phone Number</string>
     <string name="preference_file_key">com.sunit.zingo</string>
+    <string name="password_suggestion">The minimum password length is 6 characters and must contain at least 1 lowercase letter, 1 capital letter, 1 number and 1 special character.</string>
     />
 </resources>

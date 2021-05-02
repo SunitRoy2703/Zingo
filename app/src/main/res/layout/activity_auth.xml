@@ -8,7 +8,111 @@
     tools:context=".Activities.AuthenticationActivity">
 
 
-    <include layout="@layout/layout_login"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintCircleRadius="@dimen/loginCardRadius">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zingo_logo"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/loginHeader"
+            android:text="Welcome" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/loginSubHeader"
+            android:text="Sign in to continue" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPhone"
+            style="@style/parent"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@android:color/darker_gray">
+
+            <EditText
+                android:id="@+id/editTextPhoneNo"
+                style="@style/modifiedEditText"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/phone"
+                android:layout_height="50dp"
+                android:hint="@string/login_phno_hint"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPassword"
+            style="@style/parent"
+            android:background="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                style="@style/modifiedEditText"
+                android:textColor="@color/black"
+                android:layout_height="50dp"
+                android:hint="@string/login_password_hint"
+                android:drawableLeft="@drawable/lock"
+                android:drawableRight="@drawable/eye"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/parent"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:text="@string/password_suggestion" />
+
+        <Button
+            android:id="@+id/loginButton"
+            style="@style/loginButton"
+            android:text="SIGN IN"
+            android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+
+        <TextView
+            android:id="@+id/signUp"
+            style="@style/parent"
+            android:textStyle="bold"
+            android:textSize="@dimen/suggestionTextSize"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:text="@string/login_signup_hint"
+            android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+        <TextView
+            style="@style/parent"
+            android:textStyle="bold"
+            android:textSize="@dimen/suggestionTextSize"
+            android:textColor="@color/yellow"
+            android:gravity="center_horizontal"
+            android:text="Forget Password?"
+            android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+
+    </LinearLayout>
 
 
 

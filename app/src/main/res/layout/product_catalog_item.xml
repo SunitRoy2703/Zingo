@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="20dp">
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/new_order"/>
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:scaleType="centerCrop" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#66FFFFFF"
             android:layout_alignParentBottom="true">
             <TextView
                 android:id="@+id/text_one"
@@ -28,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Title"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:paddingHorizontal="15dp"/>
 
@@ -39,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_one"
                 android:text="Price"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@android:color/black"
                 android:textStyle="italic"
                 android:paddingHorizontal="15dp"
@@ -47,7 +44,15 @@
 
         </LinearLayout>
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/remove"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:drawableLeft="@drawable/remove"
+        android:text="Remove"
+        android:textSize="14sp"
+        android:textColor="@color/yellow" />
 
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

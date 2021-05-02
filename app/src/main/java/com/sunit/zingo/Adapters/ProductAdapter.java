@@ -35,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     }
 
     public static class ProductHolder extends RecyclerView.ViewHolder {
-        public TextView textView1, textView2;
+        public TextView textView1, textView2, textView3;
         public ImageView imageView;
         public Button button;
 
@@ -43,6 +43,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             super(itemView);
             textView1 = itemView.findViewById(R.id.text_one);
             textView2 = itemView.findViewById(R.id.text_two);
+            textView3 = itemView.findViewById(R.id.text_three);
             imageView = itemView.findViewById(R.id.image);
             button = itemView.findViewById(R.id.add_button);
 
@@ -88,11 +89,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         Product product = productList.get(position);
 
         holder.textView1.setText(product.getModel());
-        holder.textView2.setText(product.getPrice());
-
+        holder.textView2.setText("Rs. " + product.getPrice());
         Glide.with(context)
                 .load(product.getImage1())
                 .into(holder.imageView);
+
+        if (product.getAssign_product().equals("no")) {
+            holder.button.setVisibility(View.GONE);
+            holder.textView3.setVisibility(View.VISIBLE);
+        }
 
 
     }

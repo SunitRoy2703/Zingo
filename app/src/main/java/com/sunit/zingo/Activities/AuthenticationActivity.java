@@ -5,9 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -39,6 +44,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     boolean isPasswordChecked = false;
     TextInputLayout phoneNo_layout, password_layout;
     boolean haveConnection;
+    TextView signUp;
 
 
     @Override
@@ -57,8 +63,14 @@ public class AuthenticationActivity extends AppCompatActivity {
         phoneNo = findViewById(R.id.editTextPhoneNo);
         password = findViewById(R.id.editTextPassword);
         login = findViewById(R.id.loginButton);
+        signUp = findViewById(R.id.signUp);
 
         apiInterface = ApiClient.getClient().create(APIInterface.class);
+
+        String text = "<font color='white'>Don't have an account?</font><font color='yellow'>Sign Up</font>";
+
+        signUp.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

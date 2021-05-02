@@ -64,7 +64,7 @@ public class ProductCatalogAdapter extends RecyclerView.Adapter<ProductCatalogAd
         Product product = productList.get(position);
 
         holder.textView1.setText(product.getModel());
-        holder.textView2.setText(product.getPrice());
+        holder.textView2.setText("Rs. " +product.getPrice());
 
         Glide.with(context)
                 .load(product.getImage1())
